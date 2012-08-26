@@ -1,6 +1,9 @@
 There is the snippets (code templates) for Netbeans.
 Snippets includes common templates for PHP and support some methods of Yii framework.
 
+If you don't know what is snippets, you can read manual:
+http://netbeans.org/kb/docs/php/code-templates_ru.html
+
 HOW TO INSTALL
 1. Download files as zip
 2. (for backup current settings) Netbeans menu -> Tools -> Parametres -> Button "Export". Save the file into your disk
