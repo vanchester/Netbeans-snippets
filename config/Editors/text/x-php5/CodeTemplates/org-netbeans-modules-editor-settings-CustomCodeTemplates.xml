@@ -1,31 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE codetemplates PUBLIC "-//NetBeans//DTD Editor Code Templates settings 1.0//EN" "http://www.netbeans.org/dtds/EditorCodeTemplates-1_0.dtd">
 <codetemplates>
-<!-- common PHP templates -->
+    <codetemplate abbreviation="aform" xml:space="preserve">
+        <code><![CDATA[<?php $$${form} = $this->beginWidget('CActiveForm', array(
+		'id' => '${id}',
+		'action'=>array('${action}'),
+		'errorMessageCssClass' => '${errorClasses}',
+		'enableAjaxValidation'=>${CONDITION1 enableAjaxValidation instanceof="boolean" default="true"},
+		'enableClientValidation'=>${CONDITION2 enableClientValidation instanceof="boolean" default="true"},
+		'clientOptions'=>array(
+			'validateOnSubmit'=>${CONDITION3 validateOnSubmit instanceof="boolean" default="true"},
+			'validateOnChange'=>${CONDITION4 validateOnChange instanceof="boolean" default="true"}
+		)
+	))]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="G" xml:space="preserve">
+        <code><![CDATA[$_GET['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="tr" xml:space="preserve">
+        <code><![CDATA[try {
+	${cursor}
+} catch (e) {
+	
+}]]></code>
+    </codetemplate>
     <codetemplate abbreviation="for" xml:space="preserve">
         <code><![CDATA[for ($$${i}; $$${i} < $$${var}; $$${i}++) {
 	${selection}${cursor}
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="ife" xml:space="preserve">
-        <code><![CDATA[if (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
+    <codetemplate abbreviation="t-" xml:space="preserve">
+        <code><![CDATA[$this->${name}]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="C" xml:space="preserve">
+        <code><![CDATA[$_COOKIE['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="retf" xml:space="preserve">
+        <code><![CDATA[return false;]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="while" contexts="php-code" uuid="org.netbeans.modules.php.editor.codetemplate.while" xml:space="preserve">
+        <code><![CDATA[while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
 	${selection}${cursor}
-} else {
-	
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="wh" xml:space="preserve">
-        <code><![CDATA[while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
-        ${selection}${cursor}
-}]]></code>
+    <codetemplate abbreviation="par" xml:space="preserve">
+        <code><![CDATA[Yii::app()->params['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="SS" xml:space="preserve">
+        <code><![CDATA[$_SESSION['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="vdd" xml:space="preserve">
+        <code><![CDATA[var_dump($$${var}); die($$$(msg));]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="def" xml:space="preserve">
+        <code><![CDATA[define('${name}', $$${var});]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="inc" xml:space="preserve">
+        <code><![CDATA[include '${name}';]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="P" xml:space="preserve">
+        <code><![CDATA[$_POST['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="S" xml:space="preserve">
+        <code><![CDATA[$_SERVER['${name}']]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="request" xml:space="preserve">
+        <code><![CDATA[Yii::app()->request->${cursor}]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="vd" xml:space="preserve">
+        <code><![CDATA[var_dump($$${var});]]></code>
     </codetemplate>
     <codetemplate abbreviation="do" xml:space="preserve">
         <code><![CDATA[do {
 	${selection}${cursor}
 } while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"});]]></code>
     </codetemplate>
-    <codetemplate abbreviation="def" xml:space="preserve">
-        <code><![CDATA[define('${name}', $$${var});]]></code>
+    <codetemplate abbreviation="usr" xml:space="preserve">
+        <code><![CDATA[Yii::app()->user->${cursor}]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="end" xml:space="preserve">
+        <code><![CDATA[Yii::app()->end()]]></code>
     </codetemplate>
     <codetemplate abbreviation="sw" xml:space="preserve">
         <code><![CDATA[switch ($$${var}) {
@@ -36,21 +90,8 @@
 		break;
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="ar" xml:space="preserve">
-        <code><![CDATA[$$${arrayName} = array('${key}' => $$${val});]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="tr" xml:space="preserve">
-        <code><![CDATA[try {
-	${cursor}
-} catch (e) {
-	
-}]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="vd" xml:space="preserve">
-        <code><![CDATA[var_dump($$${var});]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="vdd" xml:space="preserve">
-        <code><![CDATA[var_dump($$${var}); die($$$(msg));]]></code>
+    <codetemplate abbreviation="rett" xml:space="preserve">
+        <code><![CDATA[return true;]]></code>
     </codetemplate>
     <codetemplate abbreviation="getset" xml:space="preserve">
         <code><![CDATA[/**
@@ -70,87 +111,30 @@ public function set${var}($$${var}) {
 	return $this;
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="rett" xml:space="preserve">
-        <code><![CDATA[return true;]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="retf" xml:space="preserve">
-        <code><![CDATA[return false;]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="t-" xml:space="preserve">
-        <code><![CDATA[$this->${name};]]></code>
+    <codetemplate abbreviation="aget" xml:space="preserve">
+        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}');]]></code>
     </codetemplate>
     <codetemplate abbreviation="f" xml:space="preserve">
         <code><![CDATA[function ${foo}(){
 	
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="C" xml:space="preserve">
-        <code><![CDATA[$_COOKIE['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="G" xml:space="preserve">
-        <code><![CDATA[$_GET['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="P" xml:space="preserve">
-        <code><![CDATA[$_POST['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="S" xml:space="preserve">
-        <code><![CDATA[$_SERVER['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="SS" xml:space="preserve">
-        <code><![CDATA[$_SESSION['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="inc" xml:space="preserve">
-        <code><![CDATA[include '${name}';]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="inc1" xml:space="preserve">
-        <code><![CDATA[include_once '${name}';]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="req" xml:space="preserve">
-        <code><![CDATA[require '${name}';]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="req1" xml:space="preserve">
-        <code><![CDATA[require_once '${name}';]]></code>
-    </codetemplate>
-
-<!-- Yii framework methods -->
-    <codetemplate abbreviation="yi" xml:space="preserve">
-        <code><![CDATA[Yii::${cursor};]]></code>
-    </codetemplate>
     <codetemplate abbreviation="app" xml:space="preserve">
-        <code><![CDATA[Yii::app()->${cursor};]]></code>
+        <code><![CDATA[Yii::app()->${cursor}]]></code>
     </codetemplate>
-    <codetemplate abbreviation="usr" xml:space="preserve">
-        <code><![CDATA[Yii::app()->user->${cursor};]]></code>
+    <codetemplate abbreviation="wh" xml:space="preserve">
+        <code><![CDATA[while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
+	${selection}${cursor}
+}]]></code>
     </codetemplate>
-    <codetemplate abbreveation="guest?" xml:space="preserve">
-        <code><![CDATA[Yii::app()->user->isGuest]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="request" xml:space="preserve">
-        <code><![CDATA[Yii::app()->request->${cursor};]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="sflash" xml:space="preserve">
-        <code><![CDATA[Yii::app()->user->setFlash('${name}', $$${val});]]></code>
+    <codetemplate abbreviation="cache" xml:space="preserve">
+        <code><![CDATA[$this->cache($$${this->_cacheLifeTime})->${method}();]]></code>
     </codetemplate>
     <codetemplate abbreviation="hflash" xml:space="preserve">
         <code><![CDATA[if (Yii::app()->user->hasFlash('${name}')) {
 	${selection}${cursor};
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="render" xml:space="preserve">
-        <code><![CDATA[$this->render('${view}', array(
-	${cursor}
-));]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="aget" xml:space="preserve">
-        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}');]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="par" xml:space="preserve">
-        <code><![CDATA[Yii::app()->params['${name}'];]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="cache" xml:space="preserve">
-        <code><![CDATA[$this->cache($$${this->_cacheLifeTime})->${method}();]]></code>
-    </codetemplate>
-<!-- Yii - templates -->
     <codetemplate abbreviation="menu" xml:space="preserve">
         <code><![CDATA[<?php
 	$this->widget('zii.widgets.CMenu',array(
@@ -160,26 +144,42 @@ public function set${var}($$${var}) {
 	));
 ?>]]></code>
     </codetemplate>
-    <codetemplate abbreviation="aform" xml:space="preserve">
-        <code><![CDATA[<?php $$${form} = $this->beginWidget('CActiveForm', array(
-		'id' => '${id}',
-		'action'=>array('${action}'),
-		'errorMessageCssClass' => '${errorClasses}',
-		'enableAjaxValidation'=>${CONDITION1 enableAjaxValidation instanceof="boolean" default="true"},
-		'enableClientValidation'=>${CONDITION2 enableClientValidation instanceof="boolean" default="true"},
-		'clientOptions'=>array(
-			'validateOnSubmit'=>${CONDITION3 validateOnSubmit instanceof="boolean" default="true"},
-			'validateOnChange'=>${CONDITION4 validateOnChange instanceof="boolean" default="true"}
-		)
-	))]]></code>
+    <codetemplate abbreviation="ar" xml:space="preserve">
+        <code><![CDATA[$$${arrayName} = array('${key}' => $$${val});]]></code>
     </codetemplate>
-<!-- Special modules -->
+    <codetemplate abbreviation="render" xml:space="preserve">
+        <code><![CDATA[$this->render('${view}', array(
+	${cursor}
+));]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="ife" xml:space="preserve">
+        <code><![CDATA[if (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
+	${selection}${cursor}
+} else {
+	
+}]]></code>
+    </codetemplate>
     <codetemplate abbreviation="email" xml:space="preserve">
-	<code><![CDATA[Yii::app()->getModule('email');
+        <code><![CDATA[Yii::app()->getModule('email');
 $email = new Email;
 $email->to = $$${email};
 $email->subject = $$${title};
 $email->message = $$${text};
 $email->send();]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="req1" xml:space="preserve">
+        <code><![CDATA[require_once '${name}';]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="inc1" xml:space="preserve">
+        <code><![CDATA[include_once '${name}';]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="sflash" xml:space="preserve">
+        <code><![CDATA[Yii::app()->user->setFlash('${name}', $$${val});]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="req" xml:space="preserve">
+        <code><![CDATA[require '${name}';]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="yi" xml:space="preserve">
+        <code><![CDATA[Yii::${cursor}]]></code>
     </codetemplate>
 </codetemplates>
