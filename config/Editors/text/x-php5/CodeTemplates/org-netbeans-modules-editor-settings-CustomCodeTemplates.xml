@@ -76,7 +76,10 @@
 } while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"});]]></code>
     </codetemplate>
     <codetemplate abbreviation="usr" xml:space="preserve">
-        <code><![CDATA[Yii::app()->user->${cursor}]]></code>
+        <code><![CDATA[Yii::app()->user->${id}]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="empl" xml:space="preserve">
+        <code><![CDATA[Yii::app()->employee->${id}]]></code>
     </codetemplate>
     <codetemplate abbreviation="end" xml:space="preserve">
         <code><![CDATA[Yii::app()->end()]]></code>
@@ -92,6 +95,9 @@
     </codetemplate>
     <codetemplate abbreviation="rett" xml:space="preserve">
         <code><![CDATA[return true;]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="aget" xml:space="preserve">
+        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}');]]></code>
     </codetemplate>
     <codetemplate abbreviation="getset" xml:space="preserve">
         <code><![CDATA[/**
@@ -111,9 +117,6 @@ public function set${var}($$${var}) {
 	return $this;
 }]]></code>
     </codetemplate>
-    <codetemplate abbreviation="aget" xml:space="preserve">
-        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}');]]></code>
-    </codetemplate>
     <codetemplate abbreviation="f" xml:space="preserve">
         <code><![CDATA[function ${foo}(){
 	
@@ -126,6 +129,9 @@ public function set${var}($$${var}) {
         <code><![CDATA[while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
 	${selection}${cursor}
 }]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="comp" xml:space="preserve">
+        <code><![CDATA[Yii::app()->company->${id}]]></code>
     </codetemplate>
     <codetemplate abbreviation="cache" xml:space="preserve">
         <code><![CDATA[$this->cache($$${this->_cacheLifeTime})->${method}();]]></code>
@@ -151,6 +157,9 @@ public function set${var}($$${var}) {
         <code><![CDATA[$this->render('${view}', array(
 	${cursor}
 ));]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="t" xml:space="preserve">
+        <code><![CDATA[Yii::t('${category}', '${message}')]]></code>
     </codetemplate>
     <codetemplate abbreviation="ife" xml:space="preserve">
         <code><![CDATA[if (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
