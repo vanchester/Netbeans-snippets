@@ -2,17 +2,17 @@
 <!DOCTYPE codetemplates PUBLIC "-//NetBeans//DTD Editor Code Templates settings 1.0//EN" "http://www.netbeans.org/dtds/EditorCodeTemplates-1_0.dtd">
 <codetemplates>
     <codetemplate abbreviation="aform" xml:space="preserve">
-        <code><![CDATA[<?php $$${form} = $this->beginWidget('CActiveForm', array(
-		'id' => '${id}',
-		'action'=>array('${action}'),
-		'errorMessageCssClass' => '${errorClasses}',
-		'enableAjaxValidation'=>${CONDITION1 enableAjaxValidation instanceof="boolean" default="true"},
-		'enableClientValidation'=>${CONDITION2 enableClientValidation instanceof="boolean" default="true"},
-		'clientOptions'=>array(
-			'validateOnSubmit'=>${CONDITION3 validateOnSubmit instanceof="boolean" default="true"},
-			'validateOnChange'=>${CONDITION4 validateOnChange instanceof="boolean" default="true"}
-		)
-	))]]></code>
+        <code><![CDATA[$$${form} = $this->beginWidget('CActiveForm', array(
+	'id' => '${id}',
+	'action'=>array('${action}'),
+	'errorMessageCssClass' => '${errorClasses}',
+	'enableAjaxValidation'=>${CONDITION1 enableAjaxValidation instanceof="boolean" default="true"},
+	'enableClientValidation'=>${CONDITION2 enableClientValidation instanceof="boolean" default="true"},
+	'clientOptions'=>array(
+		'validateOnSubmit'=>${CONDITION3 validateOnSubmit instanceof="boolean" default="true"},
+		'validateOnChange'=>${CONDITION4 validateOnChange instanceof="boolean" default="true"}
+	)
+))]]></code>
     </codetemplate>
     <codetemplate abbreviation="G" xml:space="preserve">
         <code><![CDATA[$_GET['${name}']]]></code>
@@ -78,11 +78,11 @@
     <codetemplate abbreviation="usr" xml:space="preserve">
         <code><![CDATA[Yii::app()->user->${id}]]></code>
     </codetemplate>
+    <codetemplate abbreviation="end" xml:space="preserve">
+        <code><![CDATA[Yii::app()->end();]]></code>
+    </codetemplate>
     <codetemplate abbreviation="empl" xml:space="preserve">
         <code><![CDATA[Yii::app()->employee->${id}]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="end" xml:space="preserve">
-        <code><![CDATA[Yii::app()->end()]]></code>
     </codetemplate>
     <codetemplate abbreviation="sw" xml:space="preserve">
         <code><![CDATA[switch ($$${var}) {
@@ -97,7 +97,7 @@
         <code><![CDATA[return true;]]></code>
     </codetemplate>
     <codetemplate abbreviation="aget" xml:space="preserve">
-        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}');]]></code>
+        <code><![CDATA[Arr::get(${ARRAY variableFromPreviousAssignment instanceof="array" default="$array"}, '${name}')]]></code>
     </codetemplate>
     <codetemplate abbreviation="getset" xml:space="preserve">
         <code><![CDATA[/**
@@ -142,13 +142,12 @@ public function set${var}($$${var}) {
 }]]></code>
     </codetemplate>
     <codetemplate abbreviation="menu" xml:space="preserve">
-        <code><![CDATA[<?php
-	$this->widget('zii.widgets.CMenu',array(
-		'items'=>array(
-			array('label' => '${labelName}', 'url' => array('${url}')),
-		)
-	));
-?>]]></code>
+        <code><![CDATA[$this->widget('zii.widgets.CMenu',array(
+	'items'=>array(
+		array('label' => '${labelName}', 'url' => array('${url}')),
+	)
+));
+]]></code>
     </codetemplate>
     <codetemplate abbreviation="ar" xml:space="preserve">
         <code><![CDATA[$$${arrayName} = array('${key}' => $$${val});]]></code>
