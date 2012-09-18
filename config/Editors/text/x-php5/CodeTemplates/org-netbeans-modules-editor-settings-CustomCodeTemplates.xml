@@ -38,6 +38,12 @@
     <codetemplate abbreviation="retf" xml:space="preserve">
         <code><![CDATA[return false;]]></code>
     </codetemplate>
+    <codetemplate abbreviation="puf" xml:space="preserve">
+        <code><![CDATA[public function ${foo}()
+{
+	
+}]]></code>
+    </codetemplate>
     <codetemplate abbreviation="while" contexts="php-code" uuid="org.netbeans.modules.php.editor.codetemplate.while" xml:space="preserve">
         <code><![CDATA[while (${CONDITION variableFromPreviousAssignment instanceof="boolean" default="true"}) {
 	${selection}${cursor}
@@ -67,6 +73,12 @@
     <codetemplate abbreviation="request" xml:space="preserve">
         <code><![CDATA[Yii::app()->request->${cursor}]]></code>
     </codetemplate>
+    <codetemplate abbreviation="action" xml:space="preserve">
+        <code><![CDATA[public function action${cursor} ()
+{
+	
+}]]></code>
+    </codetemplate>
     <codetemplate abbreviation="vd" xml:space="preserve">
         <code><![CDATA[var_dump($$${var});]]></code>
     </codetemplate>
@@ -83,15 +95,6 @@
     </codetemplate>
     <codetemplate abbreviation="empl" xml:space="preserve">
         <code><![CDATA[Yii::app()->employee->${id}]]></code>
-    </codetemplate>
-    <codetemplate abbreviation="sw" xml:space="preserve">
-        <code><![CDATA[switch ($$${var}) {
-	case '${value}':
-		${selection}${cursor};
-		break;
-	default:
-		break;
-}]]></code>
     </codetemplate>
     <codetemplate abbreviation="rett" xml:space="preserve">
         <code><![CDATA[return true;]]></code>
@@ -117,8 +120,18 @@ public function set${var}($$${var}) {
 	return $this;
 }]]></code>
     </codetemplate>
+    <codetemplate abbreviation="sw" xml:space="preserve">
+        <code><![CDATA[switch ($$${var}) {
+	case '${value}':
+		${selection}${cursor};
+		break;
+	default:
+		break;
+}]]></code>
+    </codetemplate>
     <codetemplate abbreviation="f" xml:space="preserve">
-        <code><![CDATA[function ${foo}(){
+        <code><![CDATA[function ${foo}()
+{
 	
 }]]></code>
     </codetemplate>
@@ -156,6 +169,12 @@ public function set${var}($$${var}) {
         <code><![CDATA[$this->render('${view}', array(
 	${cursor}
 ));]]></code>
+    </codetemplate>
+    <codetemplate abbreviation="prf" xml:space="preserve">
+        <code><![CDATA[private function ${foo}()
+{
+	
+}]]></code>
     </codetemplate>
     <codetemplate abbreviation="t" xml:space="preserve">
         <code><![CDATA[Yii::t('${category}', '${message}')]]></code>
